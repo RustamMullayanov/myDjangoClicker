@@ -3,10 +3,32 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>clicker</title>
-     <link rel="stylesheet" href="{% static 'css/clicker/style.css'%}" type="text/css">
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/clicker/style.css'%}" type="text/css">
 </head>
 <body>
-    <h1>Привет мир!</h1>
+    <header class="head">
+        <nav class="main-nav">
+    		<div class="container">
+                <ul class="menu">
+                    <li class="home">
+                        <a class="" href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="clicker">
+                        <a class="" href="#services">Clicker</a>
+                    </li>
+                </ul>
+                <ul class="auth">
+                    <li class="login">
+                        <a class="" href="{% url 'login' %}">Вход</a>
+                    </li>
+                    <li class="register">
+                        <a class="" href="{% url 'register' %}">Зарегистрироваться</a>
+                    </li>
+                </ul>
+		    </div>
+        </nav>
+    </header>
+    {% block content%}{% endblock %}
 </body>
 </html>

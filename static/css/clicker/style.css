@@ -1,3 +1,54 @@
 h1 {
     color: red;
 }
+
+body{
+    background-color: #0b172a;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.head .container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #bc4123;
+}
+
+.menu{
+    width: 300px;
+    display: grid;
+    grid-template-areas: "home clicker";
+}
+
+.menu .home {
+    grid-area: home;
+}
+
+.menu .clicker {
+    grid-area: clicker;
+}
+
+.auth {
+    width: 250px;
+    display: grid;
+    grid-template-areas: "login register";
+}
+
+.auth .login {
+    grid-area: login;
+    margin-right: 10px;
+}
+
+.auth .register {
+    grid-area: register;
+}
