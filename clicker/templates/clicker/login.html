@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Пока</h1>
+    <form class="login-form" action="#" method="post">
+        <span class="local-title"> Войдите в аккаунт</span>
+        <input class="inp" type="text"  placeholder="логин" name="login" id="login"/>
+        <input class="inp" type="password"  placeholder="пароль" name="password"/>
+        <button class="log">Войти</button>
+        <p class="message">Не зарегистрировались? <a class="log-button" href="#">Создайте аккаунт</a></p>
+    </form>
 {% endblock %}

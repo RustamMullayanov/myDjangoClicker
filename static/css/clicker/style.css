@@ -52,3 +52,58 @@ a {
 .auth .register {
     grid-area: register;
 }
+
+/* Стили для форм входа и регистрации*/
+.login-form {
+    position: relative;
+    z-index: 1;
+    background-color: #bc4123;
+    width: 20%;
+    height: 50%;
+    margin: 5% auto 100px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.inp {
+    outline: 0;
+    background: white;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.log {
+    text-transform: uppercase;
+    outline: 0;
+    background: #463940;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.log-button{
+    color: white;
+}
+
+.message {
+    color: #0b172a;
+}
+
+.local-title {
+    height: 35px;
+    padding: 5px;
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #463940;
+    border-radius: 20px;
+}

@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Мир</h1>
+    <form class="login-form" action="#" method="post">
+        <span class="local-title"> Зарегистрируйтесь </span>
+        <input class="inp" type="text" placeholder="логин" name="login"/>
+        <input class="inp" type="text" placeholder="email" name="email"/>
+        <input class="inp" type="password" placeholder="пароль" name="password"/>
+        <button class="log" type="submit">Зарегистрироваться</button>
+    </form>
 {% endblock %}
