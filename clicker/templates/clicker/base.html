@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title%}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/clicker/style.css'%}" type="text/css">
+    {% block script%}{% endblock %}
 </head>
 <body>
     <header class="head">
@@ -15,7 +16,7 @@
                         <a class="" href="{% url 'home' %}">Главная</a>
                     </li>
                     <li class="clicker">
-                        <a class="" href="#services">Clicker</a>
+                        <a class="" href="{% url 'clicker' %}">Clicker</a>
                     </li>
                 </ul>
                 <ul class="auth">

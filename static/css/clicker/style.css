@@ -2,7 +2,7 @@ h1 {
     color: red;
 }
 
-body{
+body {
     background-color: #0b172a;
     font-size: 20px;
     margin: 0;
@@ -18,13 +18,13 @@ a {
     color: white;
 }
 
-.head .container{
+.head .container {
     display: flex;
     justify-content: space-between;
     background-color: #bc4123;
 }
 
-.menu{
+.menu {
     width: 300px;
     display: grid;
     grid-template-areas: "home clicker";
@@ -89,7 +89,7 @@ a {
     cursor: pointer;
 }
 
-.log-button{
+.log-button {
     color: white;
 }
 
@@ -106,4 +106,89 @@ a {
     color: white;
     background-color: #463940;
     border-radius: 20px;
+}
+
+/* Стили для кликера*/
+.boosts-container {
+    background-color: #463940;
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+    height: 450px;
+}
+
+.filter {
+    visibility: hidden;
+}
+
+.boost {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #bc4123;
+    border-color: #bc4123;
+    cursor: pointer;
+}
+
+.first {
+    position: relative;
+    top: 70px;
+    left: 175px;
+}
+
+.second {
+    position: relative;
+    top: 100px;
+    left: 195px;
+}
+
+.third {
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+.fourth {
+    position: relative;
+    top: 150px;
+    right: 5px;
+}
+
+.power {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 150px;
+    background-color: darkred;
+    border-color: darkred;
+    cursor: pointer;
+}
+
+.five {
+    position: relative;
+    top: 150px;
+}
+
+.sixth {
+    position: relative;
+    top: 150px;
+}
+
+.seventh {
+    position: relative;
+    top: 200px;
+    right: 50px;
+}
+
+.eighth {
+    position: relative;
+    top: 200px;
+    right: 200px;
+}
+
+.ninth {
+    position: relative;
+    top: 230px;
+    right: 175px;
 }

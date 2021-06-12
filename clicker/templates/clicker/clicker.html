@@ -1,0 +1,31 @@
+{% extends 'clicker/base.html' %}
+
+{% block title%}
+Главная страница
+{% endblock %}
+
+{% block script%}
+<script src="/static/js/main.js"></script>
+{% endblock %}
+{% block content %}
+<div class="game">
+    <div class="blood-container">
+
+    </div>
+    <div class="boosts-container">
+        <div class="boosts">
+            <button class="boost first filter">1</button>
+            <button class="boost second filter">2</button>
+            <button class="boost third filter">3</button>
+            <button class="boost fourth filter">4</button>
+
+            <button id="power" class="power">9</button>
+
+            <button class="boost five filter">5</button>
+            <button class="boost sixth filter">6</button>
+            <button class="boost seventh filter">7</button>
+            <button class="boost eighth filter">8</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

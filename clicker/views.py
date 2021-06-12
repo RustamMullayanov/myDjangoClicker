@@ -5,6 +5,10 @@ def home(request):
     return render(request, 'clicker/home.html')
 
 
+def clicker(request):
+    return render(request, 'clicker/clicker.html')
+
+
 def login(request):
     return render(request, 'clicker/login.html')
 
