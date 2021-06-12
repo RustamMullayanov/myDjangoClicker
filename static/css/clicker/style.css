@@ -110,11 +110,12 @@ a {
 
 /* Стили для кликера*/
 .boosts-container {
-    background-color: #463940;
+
     text-align: center;
     margin: 20px auto;
     width: 50%;
-    height: 450px;
+    height: 480px;
+    color: white;
 }
 
 .filter {
@@ -172,23 +173,36 @@ a {
 
 .sixth {
     position: relative;
-    top: 150px;
+    top: 200px;
+    right: 50px;
 }
 
 .seventh {
     position: relative;
     top: 200px;
-    right: 50px;
+    right: 200px;
 }
 
 .eighth {
     position: relative;
-    top: 200px;
-    right: 200px;
-}
-
-.ninth {
-    position: relative;
     top: 230px;
     right: 175px;
+}
+
+.score-container{
+    position: relative;
+}
+
+.blood-value {
+    left: 48.6%;
+    top: 60%;
+    position: absolute;
+}
+
+.blood-img {
+    margin: 20px auto 0;
+    padding: 10px;
+    width: 100px;
+    height: 140px;
+    background: no-repeat center/75% url(/static/img/blood.png) transparent;
 }

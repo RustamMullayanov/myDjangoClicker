@@ -1,15 +1,20 @@
 const main = () => {
-    let score = 0;
+    let boost = 0;
+    let score = document.getElementById('score')
     const power = document.getElementById('power');
     power.addEventListener('click', () => {
         // main button action here
     })
 
+    power.onclick = function () {
+        score.textContent = parseInt(score.textContent) + parseInt(power.textContent);
+    }
+
     const buttons = document.getElementsByClassName('filter');
     [...buttons].forEach(btn => {
         btn.addEventListener('click', () => {
             btn.classList.remove("filter");
-            score += +btn.textContent;
+            boost += +btn.textContent;
         })
     });
 
@@ -27,8 +32,8 @@ const main = () => {
             const visibleIndex = randomInteger(0, buttons.length - 1);
             buttons[visibleIndex].style.visibility = "visible";
         } else {
-            power.textContent = +power.textContent + score;
-            score = 0;
+            power.textContent = +power.textContent + boost;
+            boost = 0;
             const buttons = [...document.getElementsByClassName('boost')];
             buttons.forEach(btn => {
                 btn.classList.add("filter");
