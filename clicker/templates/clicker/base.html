@@ -20,12 +20,21 @@
                     </li>
                 </ul>
                 <ul class="auth">
+                    {% if request.user.is_authenticated %}
+                    <li class="login">
+                        {{request.user.username}}
+                    </li>
+                    <li class="register">
+                        <a class="" href="{% url 'logout' %}">Выход</a>
+                    </li>
+                    {% else %}
                     <li class="login">
                         <a class="" href="{% url 'login' %}">Вход</a>
                     </li>
                     <li class="register">
                         <a class="" href="{% url 'register' %}">Зарегистрироваться</a>
                     </li>
+                    {% endif %}
                 </ul>
 		    </div>
         </nav>

@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <form class="login-form" action="#" method="post">
-        <span class="local-title"> Зарегистрируйтесь </span>
-        <input class="inp" type="text" placeholder="логин" name="login"/>
-        <input class="inp" type="text" placeholder="email" name="email"/>
-        <input class="inp" type="password" placeholder="пароль" name="password"/>
-        <button class="log" type="submit">Зарегистрироваться</button>
+    {% if form.errors %}
+        <div class="form-error">{{form.errors}}</div>
+    {% endif %}
+    <form class="login-form register" method="post" action="{% url 'register' %}">
+        <span class="local-title"> Зарегистрируйтесь</span>
+        {% csrf_token %}
+        {{form}}
+        <p><input class="log" type="submit"></p>
     </form>
 {% endblock %}

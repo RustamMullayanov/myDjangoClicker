@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <form class="login-form" action="#" method="post">
+    <form class="login-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
         <span class="local-title"> Войдите в аккаунт</span>
         <input class="inp" type="text"  placeholder="логин" name="login" id="login"/>
         <input class="inp" type="password"  placeholder="пароль" name="password"/>
