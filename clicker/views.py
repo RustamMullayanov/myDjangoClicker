@@ -1,8 +1,10 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .my_forms import RegForm
 from django.contrib import auth
 from django.contrib.auth.models import User
 from . import models
+import json
 
 
 def home(request):
@@ -23,7 +25,7 @@ def login(request):
         user = auth.authenticate(username=user_name, password=password)
         if user is not None and user.is_active:
             auth.login(request, user)
-            return render(request, 'clicker/clicker.html')
+            return redirect('clicker')
     return render(request, 'clicker/login.html')
 
 
@@ -42,7 +44,17 @@ def register(request):
     return render(request, 'clicker/register.html', {'form': form})
 
 
+def stat(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            user_clicker = models.Clicker.objects.get(user=request.user)
+            data = json.load(request)
+            user_clicker.blood_score = data["score"]
+            user_clicker.click_power = data["power"]
+            user_clicker.save()
+            return JsonResponse(data=data)
+
+
 def logout(request):
     auth.logout(request)
     return redirect('home')
-

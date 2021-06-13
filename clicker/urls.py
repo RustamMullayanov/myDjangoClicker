@@ -6,7 +6,8 @@ urlpatterns = [
     path('clicker', clicker, name='clicker'),
     path('login', login, name='login'),
     path('register', register, name='register'),
-    path('logout', logout, name='logout')
+    path('logout', logout, name='logout'),
+    path('stat', stat, name='stat')
 ]
 
 

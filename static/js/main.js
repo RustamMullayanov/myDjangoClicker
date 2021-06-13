@@ -1,14 +1,29 @@
 const main = () => {
     let boost = 0;
-    let score = document.getElementById('score')
-    const power = document.getElementById('power');
-    power.addEventListener('click', () => {
-        // main button action here
-    })
+    const scoreDiv = document.getElementById('score');
+    const powerDiv = document.getElementById('power');
+    const csrftoken = document.querySelector("[name=csrfmiddlewaretoken]").value
 
-    power.onclick = function () {
-        score.textContent = parseInt(score.textContent) + parseInt(power.textContent);
-    }
+    powerDiv.addEventListener('click', async () => {
+        const power = +powerDiv.textContent;
+        const score = +scoreDiv.textContent + power;
+        scoreDiv.textContent = score.toString();
+        const options = {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                'X-CSRFToken': csrftoken
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify({score, power})
+        }
+        try {
+            const res = await fetch('/stat', options);
+            console.log(await res.json());
+        } catch (e) {
+            console.error(e);
+        }
+    })
 
     const buttons = document.getElementsByClassName('filter');
     [...buttons].forEach(btn => {
@@ -32,7 +47,7 @@ const main = () => {
             const visibleIndex = randomInteger(0, buttons.length - 1);
             buttons[visibleIndex].style.visibility = "visible";
         } else {
-            power.textContent = +power.textContent + boost;
+            powerDiv.textContent = +powerDiv.textContent + boost;
             boost = 0;
             const buttons = [...document.getElementsByClassName('boost')];
             buttons.forEach(btn => {
